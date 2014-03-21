@@ -35,7 +35,7 @@ class Configuration implements ConfigurationInterface
                 ->children()
                     ->scalarNode('event')->defaultValue('Application\\Rz\\CalendarBundle\\Entity\\Event')->end()
                     ->scalarNode('category')->defaultValue('Application\\Rz\\CalendarBundle\\Entity\\Category')->end()
-                    ->scalarNode('setting')->defaultValue('Application\\Rz\\CalendarBundle\\Entity\\Settings')->end()
+                    ->scalarNode('setting')->defaultValue('Application\\Rz\\CalendarBundle\\Entity\\Setting')->end()
                 ->end()
             ->end()
 
