@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="rz_calendar.calendar.admin.event" class="%rz_calendar.calendar.admin.event.class%">
+            <tag name="sonata.admin" manager_type="orm" group="rz_calendar" label="rz_calendar_event"  label_catalogue="%rz_calendar.calendar.admin.event.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%rz_calendar.calendar.event.entity%</argument>
+            <argument>%rz_calendar.calendar.admin.event.controller%</argument>
+
+            <call method="setEventManager">
+                <argument type="service" id="rz_calendar.manager.event" />
+            </call>
+
+            <call method="setTranslationDomain">
+                <argument>%rz_calendar.calendar.admin.event.translation_domain%</argument>
+            </call>
+        </service>
+
+        <service id="rz_calendar.calendar.admin.category" class="%rz_calendar.calendar.admin.category.class%">
+            <tag name="sonata.admin" manager_type="orm" group="rz_calendar" label="rz_calendar_category"  label_catalogue="%rz_calendar.calendar.admin.category.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%rz_calendar.calendar.category.entity%</argument>
+            <argument>%rz_calendar.calendar.admin.category.controller%</argument>
+
+            <call method="setCategoryManager">
+                <argument type="service" id="rz_calendar.manager.category" />
+            </call>
+
+            <call method="setTranslationDomain">
+                <argument>%rz_calendar.calendar.admin.category.translation_domain%</argument>
+            </call>
+        </service>
+
+        <service id="rz_calendar.calendar.admin.setting" class="%rz_calendar.calendar.admin.setting.class%">
+            <tag name="sonata.admin" manager_type="orm" group="rz_calendar" label="rz_calendar_setting"  label_catalogue="%rz_calendar.calendar.admin.setting.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%rz_calendar.calendar.setting.entity%</argument>
+            <argument>%rz_calendar.calendar.admin.setting.controller%</argument>
+
+            <call method="setSettingManager">
+                <argument type="service" id="rz_calendar.manager.setting" />
+            </call>
+
+            <call method="setTranslationDomain">
+                <argument>%rz_calendar.calendar.admin.setting.translation_domain%</argument>
+            </call>
+        </service>
+    </services>
+</container>

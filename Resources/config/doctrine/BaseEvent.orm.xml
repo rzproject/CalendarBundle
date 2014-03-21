@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="Rz\CalendarBundle\Entity\BaseEvent">
+        <field name="title" column="title" type="string" length="255" />
+        <field name="description" column="description" type="text" />
+        <field name="start" column="start" type="datetime" />
+        <field name="end" column="end" type="datetime" />
+        <field name="createdAt" type="datetime" nullable="true" column="created_at"/>
+        <field name="updatedAt" type="datetime" nullable="true" column="updated_at"/>
+        <lifecycle-callbacks>
+            <lifecycle-callback type="prePersist" method="prePersist"/>
+            <lifecycle-callback type="preUpdate" method="preUpdate"/>
+        </lifecycle-callbacks>
+    </mapped-superclass>
+
+</doctrine-mapping>

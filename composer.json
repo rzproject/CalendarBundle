@@ -1,0 +1,28 @@
+{
+    "name": "rz/calendar-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Bundle Sonata Calendar Extension",
+    "keywords": ["symfony2", "Event", "Calendar", "RZProject"],
+    "homepage": "https://github.com/rzproject/CalendarBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mell zamora",
+            "email": "mell@rzproject.org",
+            "homepage": "http://www.rzproject.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "rz/admin-bundle": "~1.0",
+        "rz/doctrine-orm-admin-bundle": "~1.0"
+    },
+    "autoload": {
+        "psr-4": { "Rz\\CalendarBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

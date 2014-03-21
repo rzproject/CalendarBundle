@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="rz_calendar.manager.event.class">Rz\CalendarBundle\Entity\EventManager</parameter>
+        <parameter key="rz_calendar.manager.category.class">Rz\CalendarBundle\Entity\CategoryManager</parameter>
+        <parameter key="rz_calendar.manager.setting.class">Rz\CalendarBundle\Entity\SettingManager</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="rz_calendar.manager.event" class="%rz_calendar.manager.event.class%">
+            <argument>%rz_calendar.calendar.event.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="rz_calendar.manager.category" class="%rz_calendar.manager.category.class%">
+            <argument>%rz_calendar.calendar.category.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="rz_calendar.manager.setting" class="%rz_calendar.manager.setting.class%">
+            <argument>%rz_calendar.calendar.setting.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+    </services>
+
+</container>
